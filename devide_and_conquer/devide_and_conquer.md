@@ -14,7 +14,7 @@ if A[low] = key:
     return low 
 return LinerSearch(A, low + 1, high, key)
 ```
-(this is not a solution that would fit devide and conquer algorithm :pointupindex:)
+(this is not a solution that would fit devide and conquer algorithm :point_up_2:)
 
 
 
