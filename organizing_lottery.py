@@ -42,4 +42,4 @@ def org_lottery_fast(starts, ends, points):
     countSeg, points = countSegements(starts_left, starts_right, ends_left, ends_right, points)
     return countSeg
 
-print(org_lottery_fast([1, -10], [3, 10], [-100, 100, 0]))
+print(org_lottery_fast([1, -10], [3, 10], [-100, 100, 0]), 'answer')
