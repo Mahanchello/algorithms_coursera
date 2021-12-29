@@ -95,7 +95,11 @@ A queue has three operations:
 
 
 **Dynamic programming**
+
+Levenstein problem dp example: 
+
 ![DP table Levenshtein distance problem](levenstein.png)
+[Solution](https://github.com/Mahanchello/algorithms_coursera/blob/master/longest_common_subsequence.py)
 
 
 
