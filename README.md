@@ -95,6 +95,7 @@ A queue has three operations:
 
 
 **Dynamic programming**
+![DP table Levenshtein distance problem](levenstein.png)
 
 
 

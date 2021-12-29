@@ -3,8 +3,6 @@ The Levinstein distance is a similarity measure between words.
 Given two words, the distance measures the number of edits needed to transform one word into another. 
 There are three techniques that can be used: insertion, deletion, replacement(substitution).
 Each of each three operation adds 1 to the distance. 
-Example of the dp table: 
-![DP table Levenshtein distance problem](levenstein.png)
 """ 
 
 def edit_distance(s, t):
