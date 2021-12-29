@@ -99,7 +99,7 @@ A queue has three operations:
 Levenstein problem dp example: 
 
 ![DP table Levenshtein distance problem](levenstein.png)
-[Solution](https://github.com/Mahanchello/algorithms_coursera/blob/master/longest_common_subsequence.py)
+[Solution](https://github.com/Mahanchello/algorithms_coursera/blob/master/edit_distance.py)
 
 
 
