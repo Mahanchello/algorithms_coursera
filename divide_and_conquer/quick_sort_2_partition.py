@@ -1,9 +1,14 @@
 # sort an array [4, 3, 2, 1] using quick sort 
-
+# in this problem we are using divide and conquer strategy 
+# Note: we are using here 2 array partitioning, which is valid only when all the numbers are unique.
+# if the numbers are not unique, we need to use 3 array partitioning.
+# just because when we partition and numbers are equal, it's incorrect to put them to the left or to the right of the pivot if the pivot is the same. 
+# we will end up with quatratic running time. 
 
 def swap(arr, index1, index2):
     arr[index1], arr[index2] = arr[index2], arr[index1]
 
+# 2 array partitioning 
 def partition(arr, start, end):
     q = start
     print(end, 'end')

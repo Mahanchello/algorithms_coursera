@@ -1,4 +1,5 @@
-def naive_algo_for_lottery(starts, ends, points):
+# naive algorithm, wher running time is quadratic
+def naive_count_segments(starts, ends, points):
     res = []
     count = 0
     for j in points:
@@ -7,39 +8,39 @@ def naive_algo_for_lottery(starts, ends, points):
                 count += 1
         res.append(count)
         count = 0
-    return res    
+    return res                  
+
+def fast_count_segments(starts, ends, points):
+    # create an empty array where we will store starts, ends and points with indicators
+    main_array = []
+    # append to the array starts, ends and points with indicators
+    for i in range(len(starts)):
+        main_array.append((starts[i], 's')) # s means start 
+        main_array.append((ends[i], 'e')) # e means end 
+    for point in points:
+        main_array.append((point, 'p')) # p means point
+
+    # sort an array 
+    main_array.sort()
+    
+
+    res = {}
+    segment_count = 0
+    # loop through the main_array and count segments 
+    for i in range(len(main_array)):
+        # if elem has 's' means start, count segment 
+        if main_array[i][1] == 's':
+            segment_count += 1
+        # if elem has 'e' means end, substract 1 segment    
+        elif main_array[i][1] == 'e':
+             segment_count -= 1
+        # assign segment count to the point     
+        else: 
+            res[main_array[i][0]] = segment_count 
+    res1 = []        
+    for point in points:
+        res1.append(res[point])  
+    return res1           
 
 
-def countSegements(starts_left, starts_right, ends_left, ends_rigth, points):
-    res = []
-    i = 0
-    count = 0
-    while i < len(points):
-        print(points, 'points')
-        print(res, 'res1')
-        if points[0] >= starts_left[0] and points[0] <= ends_left[0]:
-            print('here')
-            i += 1
-            count += 1
-        elif points[0] >= starts_right[0] and points[0] <= ends_rigth[0]:
-            i += 1
-            count += 1
-        else:
-            i += 1
-    res.append(count)      
-    return res, points
-
-def org_lottery_fast(starts, ends, points):
-    if len(starts) == 1 and len(ends) == 1:
-        return starts, ends 
-    midStart = len(starts) // 2
-    midEnd = len(ends) // 2
-    print(midStart, 'midStart')
-    starts_left, ends_left = org_lottery_fast(starts[:midStart], ends[:midEnd], points)
-    starts_right, ends_right = org_lottery_fast(starts[midStart:], ends[midEnd:], points) 
-    print(starts_left, ends_left, 'starts_left, ends_left')
-    print(starts_right, ends_right, 'starts_right, ends_right')
-    countSeg, points = countSegements(starts_left, starts_right, ends_left, ends_right, points)
-    return countSeg
-
-print(org_lottery_fast([1, -10], [3, 10], [-100, 100, 0]), 'answer')
+print(fast_count_segments([0, -3, 7], [5, 2, 10], [1, 6]))

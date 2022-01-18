@@ -10,9 +10,15 @@ Let's say in the sorted array [1, 2, 3, 4, 5] you need to guess the number that 
 
 # Binary search: 
 
-Same task as above, but in binary search we pick random number and depending if is too high or too low we choose which direction we need to go through to guess the right number. Thus binary search works repeatedly dividing in half the portion of hte list that could contain an item, until you've narrowed down the possible location to one. 
+Same task as above, but in binary search we pick random number and depending if is too high or too low we choose which direction we need to go through to guess the right number. Thus binary search works repeatedly dividing in half the portion of the list that could contain an item, until you've narrowed down the possible location to one.
 
-The running time of bimary search is always O(log 2n). 
+Steps for binary search with recursion: 
+1. Combine 0 index + last index of the array and divide by two, get middle elem for comparison  
+2. If key less, than the middle -> search left part 
+3. If key more than the middle -> seach right part
+4. Continue dividing an array by two until the len(arr) is 1 
+
+The running time of binary search is always O(log 2n). 
 
 Growth rate: 
 growth_rate.png
@@ -21,14 +27,14 @@ growth_rate.png
 
 # Selection sort: 
 
-We are using sroting in order to sort elems in the list in asc or desc order.
+We are using sorting in order to sort elems in the list in asc or desc order.
 A key step in sorting algo is swapping, where we are swapping elems between each other and hence sorting them. 
 
 Pseudocode for selection sort:
-1. Find the smallest card. Swap it with the first card.
-2. Find the second-smallest card. Swap it with the second card.
-3. Find the third-smallest card. Swap it with the third card.
-4. Repeat finding the next-smallest card, and swapping it into the correct position until the array is sorted.
+1. Find the smallest elem. Swap it with the first elem.
+2. Find the second-smallest elem Swap it with the second elem.
+3. Find the third-smallest elem. Swap it with the third elem.
+4. Repeat finding the next-smallest elem, and swapping it into the correct position until the array is sorted.
 
 
 # Insertion sort:
